@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyServiceService } from 'app/services/my-service.service';
 
 @Component({
   selector: 'app-don',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./don.component.scss']
 })
 export class DonComponent implements OnInit {
+  data: any;
 
-  constructor() { }
+
+  constructor(private myService: MyServiceService) { }
 
   ngOnInit(): void {
+    this.myService.getAllDon().subscribe(response => {
+      this.data = response;
+    });
   }
 
 }

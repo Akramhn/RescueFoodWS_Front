@@ -1,38 +1,37 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <!-- <div class="table-responsive">
-                            <table class="table">
-                                <thead class="text-primary">
-                                    <tr>
-                                        <th>Beneficiaire</th>
-                                        <th>Household Size</th>
-                                        <th>Address</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of data.results.bindings">
-                                        <td>
-                                            <a [href]="item.beneficiaire.value" target="_blank">{{
-                                                item.beneficiaire.value }}</a>
-                                        </td>
-                                        <td>{{ item.householdSize.value }}</td>
-                                        <td>{{ item.address.value }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> -->
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Livraison Table</h4>
+              <p class="card-category">Details of each livraison</p>
             </div>
-           
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>Delivery Date</th>
+                      <th>Delivery Status</th>
+                      <th>Delivery Time</th>
+                      <th>Destination</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of data.results.bindings">
+                      <td>{{ item.deliveryDate.value }}</td>
+                      <td>{{ item.deliveryStatus.value }}</td>
+                      <td>{{ item.deliveryTime.value }}</td>
+                      <td>{{ item.destination.value }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  

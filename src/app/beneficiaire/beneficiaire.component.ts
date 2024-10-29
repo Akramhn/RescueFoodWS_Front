@@ -7,16 +7,24 @@ import { MyServiceService } from 'app/services/my-service.service';
   styleUrls: ['./beneficiaire.component.scss']
 })
 export class BeneficiaireComponent implements OnInit {
-  constructor(private fusekiDataService: MyServiceService ) { }
+  constructor(private myService: MyServiceService) { }
   data: any;
 
   ngOnInit() {
-    this.fusekiDataService.getAllData().subscribe(
-      (responseData) => {
-        this.data = responseData;
+    this.loadBeneficiaires();
+
+  }
+
+  loadBeneficiaires(): void {
+    this.myService.getBeneficiaires().subscribe({
+      next: (response) => {
+        this.data = response; // Store the entire response
       },
-      (error) => console.error('Error fetching data from Fuseki', error)
-    );
+      error: (err) => {
+        console.error('Error fetching beneficiaires:', err);
+        this.data = null; // Set to null if there's an error
+      }
+    });
   }
 
 }

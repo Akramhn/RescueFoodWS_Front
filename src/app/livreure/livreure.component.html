@@ -1,38 +1,39 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <!-- <div class="table-responsive">
-                            <table class="table">
-                                <thead class="text-primary">
-                                    <tr>
-                                        <th>Beneficiaire</th>
-                                        <th>Household Size</th>
-                                        <th>Address</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of data.results.bindings">
-                                        <td>
-                                            <a [href]="item.beneficiaire.value" target="_blank">{{
-                                                item.beneficiaire.value }}</a>
-                                        </td>
-                                        <td>{{ item.householdSize.value }}</td>
-                                        <td>{{ item.address.value }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> -->
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Livreur</h4>
+              <p class="card-category">List of livreurs with details</p>
             </div>
-           
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>Experience Level</th>
+                      <th>Availability</th>
+                      <th>Working Hours</th>
+                      <th>Delivery Radius</th>
+                      <th>Vehicle Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let livreur of livreurData.results.bindings">
+                      <td>{{ livreur.hasExperienceLevel.value }}</td>
+                      <td>{{ livreur.isAvailable.value === 'true' ? 'Available' : 'Unavailable' }}</td>
+                      <td>{{ livreur.workingHours.value }}</td>
+                      <td>{{ livreur.deliveryRadius.value }}</td>
+                      <td>{{ livreur.vehicleType.value }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
